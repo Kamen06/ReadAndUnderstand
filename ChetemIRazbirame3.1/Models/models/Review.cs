@@ -2,15 +2,17 @@
 
 namespace ChetemIRazbirame3._1.Models.models
 {
-    public class UserBiography
+    public class Review
     {
         [Key]
         public int Id { get; set; }
-        public string BiographyData { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string PlaceOfBirth { get; set; }
-        public string Nationality { get; set; }
         public int UserId { get; set; }
         public virtual User User { get; set; }
+
+        [MaxLength(200)]
+        public string Text { get; set; }
+        public int BookId { get; set; }
+        public virtual Book Book { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }

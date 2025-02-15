@@ -9,14 +9,19 @@ namespace ChetemIRazbirame3._1.Models.models
     {
         [Key]
         public int Id { get; set; }
-
-        [MaxLength(15)]
+       
+        [MaxLength(15),Required]
         public string FirstName { get; set; }
 
-        [MaxLength(15)]
+        [MaxLength(15), Required]
         public string LastName { get; set; }
-        public BitmapImage ProfilePicture { get; set; }
+        [Required]
+        public bool Deceased { get; set; }
 
-        public virtual AuthorBiography? Biography { get; set; }
+        [Display(Name = "Снимка")]
+        public string? ProfilePicture { get; set; }
+
+        [Required]
+        public string Biography { get; set; }
     }
 }
