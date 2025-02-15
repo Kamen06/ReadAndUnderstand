@@ -21,6 +21,7 @@ namespace ChetemIRazbirame3._1
             builder.Services.AddRazorPages();
             builder.Services.AddControllersWithViews();
 
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

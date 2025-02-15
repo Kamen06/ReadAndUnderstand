@@ -48,7 +48,7 @@ namespace ChetemIRazbirame3._1.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "Biography");
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName");
             return View();
         }
 
@@ -59,13 +59,14 @@ namespace ChetemIRazbirame3._1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Genre,Summary,AuthorId")] Book book)
         {
-            if (ModelState.IsValid)
+            
+            //if (ModelState.IsValid)
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "Biography", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName", book.AuthorId);
             return View(book);
         }
 
@@ -82,7 +83,7 @@ namespace ChetemIRazbirame3._1.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "Biography", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName", book.AuthorId);
             return View(book);
         }
 
@@ -98,7 +99,7 @@ namespace ChetemIRazbirame3._1.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
             {
                 try
                 {
@@ -118,7 +119,7 @@ namespace ChetemIRazbirame3._1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "Biography", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName", book.AuthorId);
             return View(book);
         }
 
