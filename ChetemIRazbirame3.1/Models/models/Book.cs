@@ -17,7 +17,7 @@ namespace ChetemIRazbirame3._1.Models.models
        
         public virtual Author Author { get; set; }
         [Required]
-        public List<Review> Reviewes { get; set; }
+        public List<Review> Reviews { get; set; } = new List<Review>();
 
 
 

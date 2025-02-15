@@ -1,11 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChetemIRazbirame3._1.Models.models
 {
-    public class User
+    public class AppUser: IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
+        
         [MaxLength(15), Required]
         public string FirstName { get; set; }
         [MaxLength(15), Required]
@@ -14,6 +14,7 @@ namespace ChetemIRazbirame3._1.Models.models
         public string ProfilePicture { get; set; }
         [Required]
         public string UserBiography { get; set; }
+        public List<Review> Reviews { get; set; } = new List<Review>();
 
     }
 }

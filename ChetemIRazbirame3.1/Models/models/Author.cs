@@ -23,5 +23,6 @@ namespace ChetemIRazbirame3._1.Models.models
 
         [Required]
         public string Biography { get; set; }
+        public List<Book> Books { get; set; } = new List<Book>();
     }
 }
