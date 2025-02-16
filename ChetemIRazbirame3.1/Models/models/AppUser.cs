@@ -7,9 +7,7 @@ namespace ChetemIRazbirame3._1.Models.models
     {
         
         [MaxLength(15), Required]
-        public string FirstName { get; set; }
-        [MaxLength(15), Required]
-        public string LastName { get; set; }
+        public string FullName { get; set; }
 
         public string ProfilePicture { get; set; }
         [Required]

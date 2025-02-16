@@ -31,8 +31,7 @@ namespace ChetemIRazbirame3._1.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
+                    FullName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserBiography = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -61,8 +60,7 @@ namespace ChetemIRazbirame3._1.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
+                    FullName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Deceased = table.Column<bool>(type: "bit", nullable: false),
                     ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Biography = table.Column<string>(type: "nvarchar(max)", nullable: false)

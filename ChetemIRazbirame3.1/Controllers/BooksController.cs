@@ -48,7 +48,7 @@ namespace ChetemIRazbirame3._1.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName");
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace ChetemIRazbirame3._1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", book.AuthorId);
             return View(book);
         }
 
@@ -83,7 +83,7 @@ namespace ChetemIRazbirame3._1.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", book.AuthorId);
             return View(book);
         }
 
@@ -119,7 +119,7 @@ namespace ChetemIRazbirame3._1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "LastName", book.AuthorId);
+            ViewData["AuthorId"] = new SelectList(_context.Authors, "Id", "FullName", book.AuthorId);
             return View(book);
         }
 

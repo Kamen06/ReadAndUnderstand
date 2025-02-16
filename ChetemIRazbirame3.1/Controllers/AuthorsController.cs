@@ -54,7 +54,7 @@ namespace ChetemIRazbirame3._1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,Deceased,ProfilePicture,Biography")] Author author)
+        public async Task<IActionResult> Create([Bind("Id,FullName,Deceased,ProfilePicture,Biography")] Author author)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace ChetemIRazbirame3._1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,Deceased,ProfilePicture,Biography")] Author author)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,Deceased,ProfilePicture,Biography")] Author author)
         {
             if (id != author.Id)
             {

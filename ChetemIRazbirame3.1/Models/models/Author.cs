@@ -10,11 +10,8 @@ namespace ChetemIRazbirame3._1.Models.models
         [Key]
         public int Id { get; set; }
        
-        [MaxLength(15),Required]
-        public string FirstName { get; set; }
-
-        [MaxLength(15), Required]
-        public string LastName { get; set; }
+        [MaxLength(40)]
+        public string FullName { get; set; }
         [Required]
         public bool Deceased { get; set; }
 
